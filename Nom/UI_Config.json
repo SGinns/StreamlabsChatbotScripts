@@ -1,0 +1,116 @@
+{
+    "output_file": "config.json",
+    "liveOnly": {
+        "type": "checkbox",
+        "value": false,
+        "label": "Live Only Mode",
+        "tooltip": "True if you want it to only run when you are live",
+        "group" : "General"
+    },
+    "command": {
+        "type": "textbox",
+        "value": "!nom",
+        "label": "Command",
+        "tooltip": "Name of the command",
+        "group": "General"
+    },
+    "permission": {
+        "type": "dropdown",
+        "value": "Everyone",
+        "items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+        "label": "Permission level",
+        "tooltip": "Set the permission level for the command",
+        "group": "General"
+    },
+    "useCustomCosts": {
+        "type": "checkbox",
+        "value": true,
+        "label": "Use custom costs",
+        "tooltip": "Enable/disable user defined cost",
+        "group": "Currency"
+    },
+    "costs": {
+        "type": "numberbox",
+        "value": 0,
+        "label": "Cost to eat",
+        "tooltip": "Set the default cost for this command.",
+        "group": "Currency"
+    },
+    "useCooldown": {
+        "type": "checkbox",
+        "value": false,
+        "label": "Use Cooldowns",
+        "tooltip": "Enable/Disable cooldown and user cooldown",
+        "group": "Cooldown"
+    },
+    "useCooldownMessages": {
+        "type": "checkbox",
+        "value": true,
+        "label": "Use cooldown messages",
+        "tooltip": "Enable/Disable cooldown messages",
+        "group": "Cooldown"
+    },
+    "cooldown": {
+        "type": "numberbox",
+        "label": "Cooldown (seconds)",
+        "value": 1,
+        "tooltip": "Cooldown in seconds.",
+        "group": "Cooldown"
+    },
+    "onCooldown": {
+        "type": "textbox",
+        "value": "$user, $command is still on cooldown for $cd minutes!",
+        "label": "Cooldown Response",
+        "tooltip": "The message that the bot will display when the command is on cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
+        "group": "Cooldown"
+    },
+    "userCooldown": {
+        "type": "numberbox",
+        "label": "User Cooldown (seconds)",
+        "value": 120,
+        "tooltip": "User cooldown in seconds.",
+        "group": "Cooldown"
+    },
+    "onUserCooldown": {
+        "type": "textbox",
+        "value": "$user, $command is still on user cooldown for $cd minutes!",
+        "label": "User Cooldown Response",
+        "tooltip": "The message that the bot will display when the command is on user cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
+        "group": "Cooldown"
+    },
+    "responseInvalidInput": {
+        "type": "textbox",
+        "value": "$user please enter a positive number with no decimal places",
+        "label": "Entering a valid number",
+        "tooltip": "The message that the bot will display when the user enters an invalid number. \r\n $user = username",
+        "group": "Response Messages"
+    },
+    "responseNotEnoughPoints": {
+        "type": "textbox",
+        "value": "$user, you do not have enough $currency , sit back, relax and watch the stream to get some $currency <3",
+        "label": "Not enough points",
+        "tooltip": "Message that will be posted if the user doesn't have enough points.\r\n $user = username \r\n $currency = Name of Currency",
+        "group": "Response Messages"
+    },
+    "responseSpecifyMorePoints": {
+        "type": "textbox",
+        "value": "$user are you not hungry? Try eating more $currency :)",
+        "label": "Message when a user wants to eat 0",
+        "tooltip": "Message that will be posted if the user inputs 0.\r\n $user = Username\r\n $currency = Name of Currency",
+        "group": "Response Messages"
+    },
+    "responseMultipleSuccessful": {
+        "type": "textbox",
+        "value": "$user just devoured $number large $currency",
+        "label": "Eat multiple (!nom $number)",
+        "tooltip": "Message that will be posted when the user eats multiple cookies.\r\n $user = username",
+        "group": "Response Messages"
+    },
+    "responseSingularSuccessful": {
+        "type": "textbox",
+        "value": "$user just devoured 1 large $currency",
+        "label": "Eat one message (!nom)",
+        "tooltip": "Message that will be posted when the user eats multiple cookies.\r\n $user = username",
+        "group": "Response Messages"
+    }
+}

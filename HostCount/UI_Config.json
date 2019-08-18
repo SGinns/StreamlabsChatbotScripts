@@ -1,0 +1,10 @@
+{
+    "output_file": "config.json",
+    "user": {
+        "type": "textbox",
+        "value": "Nikolian",
+        "label": "User to get the host count for",
+        "tooltip": "Select the user",
+        "group": "General"
+    }
+}

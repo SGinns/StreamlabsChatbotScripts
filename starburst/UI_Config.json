@@ -1,0 +1,54 @@
+{
+    "output_file": "config.json",
+    "liveOnly": {
+        "type": "checkbox",
+        "value": false,
+        "label": "Live Only Mode",
+        "tooltip": "True if you want it to only run when you are live",
+        "group" : "General"
+    },
+    "command": {
+        "type": "textbox",
+        "value": "!starburst",
+        "label": "Command",
+        "tooltip": "Name of the command",
+        "group": "General"
+    },
+    "permission": {
+        "type": "dropdown",
+        "value": "Regular",
+        "items": [
+            "Everyone",
+            "Regular",
+            "VIP+",
+            "VIP Exclusive",
+            "Subscriber",
+            "Moderator",
+            "Editor"
+          ],
+        "label": "Permission level",
+        "tooltip": "Set the permission level for the command",
+        "group": "General"
+    },
+    "beginStarburst": {
+        "type": "textbox",
+        "value": "justni1King $user has shattered a star crystal giving out $amount $currency to chat justni1SStar",
+        "label": "Begin distributing currency",
+        "tooltip": "Starts distributing currency to viewers. \r\n $user = username \r\n $currency = currency name",
+        "group": "Response Messages"
+    },
+    "onCooldown": {
+        "type": "textbox",
+        "value": "$user, $command is still on cooldown for $time!",
+        "label": "Cooldown Response",
+        "tooltip": "The message that the bot will display when the command is on cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
+        "group": "Cooldown Responses"
+    },
+    "onUserCooldown": {
+        "type": "textbox",
+        "value": "$user, you are still on cooldown for $time!",
+        "label": "User Cooldown Response",
+        "tooltip": "The message that the bot will display when the command is on user cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
+        "group": "Cooldown Responses"
+    }
+}
