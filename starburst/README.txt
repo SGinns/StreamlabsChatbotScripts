@@ -6,4 +6,4 @@
 
  Changelog:
  0.1
- + Command reated.
+ + Command created.
