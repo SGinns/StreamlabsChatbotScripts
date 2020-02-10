@@ -1,0 +1,31 @@
+{
+    "output_file": "config.json",
+    "liveOnly": {
+        "type": "checkbox",
+        "value": false,
+        "label": "Live Only Mode",
+        "tooltip": "True if you want it to only run when you are live",
+        "group" : "General"
+    },
+    "command": {
+        "type": "textbox",
+        "value": "!poll",
+        "label": "Command",
+        "tooltip": "Name of the command",
+        "group": "General"
+    },
+    "channelStreamer": {
+        "type": "textbox",
+        "value": "",
+        "label": "Streamer channel name",
+        "tooltip": "Name of your channel",
+        "group": "General"
+    },
+    "questionTimer": {
+        "type": "numberbox",
+        "value": 30,
+        "label": "Vote Collection Time",
+        "tooltip": "The time the poll is elapsed for",
+        "group": "Question"
+    }
+}

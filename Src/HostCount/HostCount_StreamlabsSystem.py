@@ -30,7 +30,7 @@ class Settings(object):
 			with codecs.open(settingsfile, encoding="utf-8-sig", mode="r") as f:
 				self.__dict__ = json.load(f, encoding="utf-8")
 		except:
-			self.user = "Nikolian"
+			self.user = ""
 
 	def Reload(self, jsondata):
 		# """ Reload settings from AnkhBot user interface by given json data. """
