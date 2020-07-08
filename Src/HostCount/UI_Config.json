@@ -6,5 +6,19 @@
         "label": "User to get the host count for",
         "tooltip": "Select the user",
         "group": "General"
+    },
+    "enable_target": {
+        "type": "checkbox",
+        "value": true,
+        "label": "Enable Host Target",
+        "tooltip": "Enables the target for the host counter",
+        "group": "General"
+    },
+    "target": {
+        "type": "numberbox",
+        "value": 69420,
+        "label": "Host target",
+        "tooltip": "Target for the host counter",
+        "group": "General"
     }
 }
