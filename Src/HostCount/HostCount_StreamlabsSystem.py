@@ -16,7 +16,7 @@ ScriptName = "Host Count"
 Website = "Coming soon!"
 Description = "The count of all the channels hosting you."
 Creator = "Rush (Steven Ginns)"
-Version = "0.1"
+Version = "0.2"
 
 #Variables
 configFile = "config.json"
@@ -31,6 +31,8 @@ class Settings(object):
 				self.__dict__ = json.load(f, encoding="utf-8")
 		except:
 			self.user = ""
+			self.target = 69420
+			self.enable_target = True
 
 	def Reload(self, jsondata):
 		# """ Reload settings from AnkhBot user interface by given json data. """
@@ -73,25 +75,53 @@ def ScriptToggled(state):
 
 def Execute(data):
 	return
-		
+
+
+def write_to_file(message):
+	if type(message) == str:
+		f = open("Services/Scripts/HostCount/AmountOfHosts.txt", "w")
+		f.write(message)
+		f.close()
+		return
+	else:
+		Parent.log(ScriptName, "message is not of type string is actually {}".format(type(message)))
+
+
+def getHostCount(api_link):
+	if type(api_link) == str:
+		global ScriptSettings
+		#Get Request
+		headers = {
+			'Authorization': 'Bearer FDF7u89fdC998875c8d7f'
+		}
+
+		return Parent.GetRequest(api_link, headers)
+	else:
+		Parent.log(ScriptName, "api_link is not a string {}".format(type(api_link)))
+
+
 def updateHosts():
 	global ScriptSettings
-	apiLink = "https://t.3v.fi/hosts/?ch={}".format(ScriptSettings.user)
-	#Get Request
-	headers = {
-		'Authorization': 'Bearer FDF7u89fdC998875c8d7f'
-	}
+	api_link = "https://t.3v.fi/hosts/?ch={}".format(ScriptSettings.user)
 
-	apiResult = Parent.GetRequest(apiLink, headers)
+	apiResult = getHostCount(api_link)
+
 	data = json.loads(apiResult)
-	response = data["response"]
-	cutOffIndex = response.find(":")
-	outputMessage = "{}".format(response[:cutOffIndex-6])
 
-	f = open("Services/Scripts/HostCount/AmountOfHosts.txt", "w")
-	f.write(outputMessage)
-	f.close()
-	return
+	response = data["response"]
+
+	cutOffIndex = response.find(":")
+
+	if ScriptSettings.enable_target is True:
+		outputMessage = "{} / {} Hosts".format(response[:cutOffIndex-6], ScriptSettings.target)
+		write_to_file(outputMessage)
+
+		return
+	elif ScriptSettings.enable_target is False:
+		outputMessage = '{} Hosts'.format(response[:cutOffIndex-6])
+		write_to_file(outputMessage)
+
+		return
 
 def Tick():
 	global lastSave
